@@ -40,11 +40,16 @@ namespace ExcelTestCSharp
                     {
                         row[j] = sheet.GetCell(i + 1, j + 1);
                     }
-                    dataGridView1.Columns[i].Name = (i+1).ToString();
+                    dataGridView1.Columns[i].Name = ((char)(i+65)).ToString();
                     dataGridView1.Rows.Add(row);
                     dataGridView1.Columns[i].DisplayIndex = i;
                 }
 
+                for(int k = 0; k < 10; k++)
+                {
+                    dataGridView1.Rows[k].HeaderCell.Value = (k + 1).ToString();
+                }
+                dataGridView1.AutoResizeColumns();
             }
         }
 
